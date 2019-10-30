@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsAttachmentsTable extends Migration
+class CreatePostCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePostsAttachmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts_attachments', function (Blueprint $table) {
+        Schema::create('post_category', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('post_id');
-            $table->integer('attachment_id');
-            $table->boolean('is_featured')->default(0);
+            $table->integer('category_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePostsAttachmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts_attachments');
+        Schema::dropIfExists('posts_categories');
     }
 }

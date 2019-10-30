@@ -12,4 +12,8 @@ class Tag extends Model
     	'description'
     ];
     
+    public function posts()
+    {
+    	return $this->belongsToMany('App\Post', 'post_tag', 'tag_id');
+    }
 }

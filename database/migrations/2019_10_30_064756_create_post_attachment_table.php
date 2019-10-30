@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTagsTable extends Migration
+class CreatePostAttachmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreatePostsTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts_tags', function (Blueprint $table) {
+        Schema::create('post_attachment', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('post_id');
-            $table->integer('tag_id');
+            $table->integer('attachment_id');
+            $table->boolean('is_featured')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreatePostsTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts_tags');
+        Schema::dropIfExists('posts_attachments');
     }
 }

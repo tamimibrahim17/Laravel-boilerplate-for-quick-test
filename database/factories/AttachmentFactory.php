@@ -6,8 +6,9 @@ use App\Attachment;
 use Faker\Generator as Faker;
 
 $factory->define(Attachment::class, function (Faker $faker) {
+	$update_img = $faker->image(public_path('/img'), 650, 480);
     return [
         'name'	=> $faker->word,
-        'path'	=> $faker->image(public_dir('/img'), 650, 480)
+        'path'	=> 'img/'.basename($update_img)
     ];
 });

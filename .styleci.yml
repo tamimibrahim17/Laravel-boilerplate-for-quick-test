@@ -1,13 +1,6 @@
 php:
   preset: recommended
   risky: true
-  enabled:
-    - long_array_syntax
-    - alpha_ordered_imports
-  disabled:
-    - align_double_arrow
-    - length_ordered_imports
-    - unused_use
   finder:
     exclude:
       - modules
